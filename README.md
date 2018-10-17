@@ -113,7 +113,7 @@ The extracted questions and answers should be processed into numeral features:
 + Each question and answer is assigned an index.
 + The original relations between questions and answers are modelled by a graph.
 
-The data processing code can be found in _xxxxxxx_.
+The data processing code can be found in [build_network.py](https://github.com/briefpaper/DCICM/blob/master/dcicm/data/build_network.py).
 
 
 
