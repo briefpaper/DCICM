@@ -1,4 +1,4 @@
-mplementation and Datasets of Deep Co-attention based Interactive Convolutional Matching for Community Question Answering -->
+<!-- ## Implementation and Datasets of Deep Co-attention based Interactive Convolutional Matching for Community Question Answering -->
 
 # Deep Co-attention based Interactive Convolutional Matching for Community Question Answering (DCICM)
 
@@ -8,11 +8,11 @@ This repository contains:
 
 The content of this README is as follows:
 
-+ Abstract
-+ Experimental Results with Significance Test
-+ Datasets
++ [Framework](#Framework)
++ [Experimental Results with Significance Test](Experimental Results with Significance Test)
++ [Datasets](Datasets)
 
-## Abstract
+## Framework
 
 ![](images/framework.png)
 
