@@ -11,6 +11,7 @@ The content of this README is as follows:
 + [Framework](#Framework)
 + [Experimental Results with Significance Test](#user-content-experimental-results-with-significance-test)
 + [Datasets](Datasets)
++ [Source Code](#user-content-source-code)
 
 ## Framework
 
@@ -73,7 +74,7 @@ First, we write two Java web crawlers to download raw webpages from the two CQA 
 We employ MongoDB to store the raw webpage data, since it contains a large amount of small files.
 The MongoDB collections (tables) are exported into bson files by the `mongodump` command and can be restored by the `mongorestore` command.
 
-The raw webpage data can be imported into MongoDB by the following command:
+The raw webpage data can be imported into MongoDB by the [`import_webpage_datasets_to_mongodb.sh`](import_webpage_datasets_to_mongodb.sh) script. The usage is as follows:
 ```bash
 sh import_webpage_datasets_to_mongodb.sh MONGO_HOST:MONGO_PORT
 ```
@@ -89,18 +90,16 @@ The source code can be found here.
 Each webpage is processed into a question and the associated answers.
 Note that the content of the extracted questions and answers is stored as HTML code snippets, which can preserve the original multi-media information, such that this dataset can also be used for multi-media tasks. 
 The extracted questions and answers are also stored in MongoDB.
- <!-- and exported as [CQA_datasets.zip](https://pan.baidu.com/s/1fWi9H_ACCt4fjmI5bA5teg). -->
 
 
-
-The extracted question and answer data can be imported into MongoDB by the following command:
+The extracted question and answer data can be imported into MongoDB by the [`import_datasets_to_mongodb.sh`](import_webpage_datasets_to_mongodb.sh) script. The usage is as follows:
 ```bash
 sh import_datasets_to_mongodb.sh MONGO_HOST:MONGO_PORT
 ```
 where you should replace `MONGO_HOST` and `MONGO_PORT` with your MongoDB configuration.
 
 
-#### Data Processing
+### Data Processing
 
 The extracted questions and answers should be processed into numeral features:
 + The text content of each question and answer is transformed into a sequence of word indices.
@@ -110,6 +109,13 @@ The extracted questions and answers should be processed into numeral features:
 The data processing code can be found in [build_network.py](https://github.com/briefpaper/DCICM/blob/master/dcicm/data/build_network.py).
 
 
+
+## Source Code
+
+To train and evaluate DCICM, you should run the following command:
+```bash
+sh train_and_evaluate_dcicm.sh
+```
 
 
 
