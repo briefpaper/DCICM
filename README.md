@@ -66,13 +66,10 @@ CQA_datasets
 ```
 
 
-
-
-
-#### Raw Webpage Data
+#### Raw Webpage Data (CQA_webpage_datasets.zip)
 
 We collect a large set of webpages from Quora and Zhihu to build two datasets for evaluation.
-First, we write two Java web crawlers [xxxx]() to download raw webpages from the two CQA sites.
+First, we write two Java web crawlers to download raw webpages from the two CQA sites.
 We employ MongoDB to store the raw webpage data, since it contains a large amount of small files.
 The MongoDB collections (tables) are exported into bson files by the `mongodump` command and can be restored by the `mongorestore` command.
 
@@ -84,18 +81,15 @@ where you should replace `MONGO_HOST` and `MONGO_PORT` with your MongoDB configu
 Note that the raw webpage data is __optional__ since we provide the extracted question and answer data.
 
 
-#### Extract QA Data from Raw Webpages
+#### Extract QA Data from Raw Webpages (CQA_datasets.zip)
 
 We employ Spark and Jsoup to extract questions and answers from the raw webpages.
 The source code can be found here.
 
 Each webpage is processed into a question and the associated answers.
 Note that the content of the extracted questions and answers is stored as HTML code snippets, which can preserve the original multi-media information, such that this dataset can also be used for multi-media tasks. 
-The extracted questions and answers are also stored in MongoDB and exported as CQA_datasets.zip:
-
-| File             | Uncompressed Size| Compressed Size   | Download Link    |
-| ----             | ----             | ----              | ----             |
-| CQA_datasets.zip | 700M             | 243M              | [Download Link](https://pan.baidu.com/s/1fWi9H_ACCt4fjmI5bA5teg) |
+The extracted questions and answers are also stored in MongoDB.
+ <!-- and exported as [CQA_datasets.zip](https://pan.baidu.com/s/1fWi9H_ACCt4fjmI5bA5teg). -->
 
 
 
