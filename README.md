@@ -6,6 +6,24 @@ This repository contains:
 + The TensorFlow implementation of DCICM
 + The three datasets used in DCICM
 
+The content of this README is as follows:
+
++ Abstract
++ Experimental Results with Significance Test
++ Datasets
+
+## Abstract
+
+![](images/framework.png)
+
+
+## Experimental Results with Significance Test
+
+![](images/results.png)
+
+
+## Experimental Results with Significance Test
+
 
 ## Datasets
 DCICM are evaluated on a well-studied benchmark dataset (QatarLiving) and two real-world datasets(Quora and Zhihu):
@@ -96,7 +114,6 @@ The extracted questions and answers should be processed into numeral features:
 + The original relations between questions and answers are modelled by a graph.
 
 The data processing code can be found in _xxxxxxx_.
-
 
 
 
