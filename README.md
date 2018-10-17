@@ -94,7 +94,7 @@ Note that the content of the extracted questions and answers is stored as HTML c
 The extracted questions and answers are also stored in MongoDB.
 
 
-The extracted question and answer data can be imported into MongoDB by the [import_datasets_to_mongodb.sh](import_webpage_datasets_to_mongodb.sh) script. The usage is as follows:
+The extracted question and answer data can be imported into MongoDB by the [import_datasets_to_mongodb.sh](import_datasets_to_mongodb.sh) script. The usage is as follows:
 ```bash
 sh import_datasets_to_mongodb.sh MONGO_HOST:MONGO_PORT
 ```
