@@ -364,5 +364,5 @@ def build_knrm_data(train_network, test_network, test_samples):
 
 if __name__ == "__main__":
     build_qa_pickle(qa_pickle_path, vocab_network_path, 40000)
-    train_network, test_network, test_samples = build_train_and_test(qa_pickle_path, train_network_path, test_network_path, 0.3)
+    train_network, test_network, test_samples = build_train_and_test(qa_pickle_path, train_network_path, test_network_path, training_rate)
     build_knrm_data(train_network, test_network, test_samples)

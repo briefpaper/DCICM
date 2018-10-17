@@ -20,6 +20,8 @@ The content of this README is as follows:
 
 ## Experimental Results with Significance Test
 
+The experimental results on three datasets are shown in the table below. Statistical differences between models are computed using the Fisher randomization test (α = 0.05).
+
 ![](images/results.png)
 
 
@@ -74,7 +76,7 @@ First, we write two Java web crawlers to download raw webpages from the two CQA 
 We employ MongoDB to store the raw webpage data, since it contains a large amount of small files.
 The MongoDB collections (tables) are exported into bson files by the `mongodump` command and can be restored by the `mongorestore` command.
 
-The raw webpage data can be imported into MongoDB by the [`import_webpage_datasets_to_mongodb.sh`](import_webpage_datasets_to_mongodb.sh) script. The usage is as follows:
+The raw webpage data can be imported into MongoDB by the [import_webpage_datasets_to_mongodb.sh](import_webpage_datasets_to_mongodb.sh) script. The usage is as follows:
 ```bash
 sh import_webpage_datasets_to_mongodb.sh MONGO_HOST:MONGO_PORT
 ```
@@ -92,7 +94,7 @@ Note that the content of the extracted questions and answers is stored as HTML c
 The extracted questions and answers are also stored in MongoDB.
 
 
-The extracted question and answer data can be imported into MongoDB by the [`import_datasets_to_mongodb.sh`](import_webpage_datasets_to_mongodb.sh) script. The usage is as follows:
+The extracted question and answer data can be imported into MongoDB by the [import_datasets_to_mongodb.sh](import_webpage_datasets_to_mongodb.sh) script. The usage is as follows:
 ```bash
 sh import_datasets_to_mongodb.sh MONGO_HOST:MONGO_PORT
 ```
@@ -106,7 +108,7 @@ The extracted questions and answers should be processed into numeral features:
 + Each question and answer is assigned an index.
 + The original relations between questions and answers are modelled by a graph.
 
-The data processing code can be found in [build_network.py](https://github.com/briefpaper/DCICM/blob/master/dcicm/data/build_network.py).
+The data processing code can be found in [build_network.py](dcicm/data/build_network.py).
 
 
 
@@ -116,6 +118,17 @@ To train and evaluate DCICM, you should run the following command:
 ```bash
 sh train_and_evaluate_dcicm.sh
 ```
+
+The core model `dcicm_match_network` and `coattention_block` can be found in [modules.py](dcicm/model/modules.py).
+
+To specify configurations such the target dataset and data directory, you should modify [config.py](dcicm/config.py):
+
+```python
+dataset = "quora"  # quora/zhihu/sem_eval
+data_dir = "/YOUR_DATA_DIR/{}".format(dataset)
+```
+
+
 
 
 

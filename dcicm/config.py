@@ -2,7 +2,7 @@
 import os
 
 dataset = "quora"  # quora/zhihu/sem_eval
-data_dir = "/home/hujun/data/AAAI2018/{}".format(dataset)
+data_dir = "/YOUR_DATA_DIR/{}".format(dataset)
 knrm_dir = os.path.join(data_dir, "knrm")
 
 qa_pickle_path = os.path.join(data_dir, "qa_list.p")
@@ -12,6 +12,8 @@ vocab_network_path = os.path.join(data_dir, "vocab_network.p")
 ndcg_samples_path = os.path.join(data_dir, "ndcg_samples.p")
 knrm_train_data_path = os.path.join(knrm_dir, "train.txt")
 knrm_test_data_path = os.path.join(knrm_dir, "test.txt")
+
+training_rate = 0.3
 
 # MongoDB Information
 MONGO_HOST = "127.0.0.1"
